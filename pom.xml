@@ -29,8 +29,8 @@
   </distributionManagement>
 
   <scm>
-    <connection>scm:git:git@github.com:ansgarkonermann/maven-drools-plugin.git</connection>
-    <developerConnection>scm:git:git@github.com:ansgarkonermann/maven-drools-plugin.git</developerConnection>
+    <connection>scm:git:git@github.com:delightful-business-documents/parent-for-libraries.git</connection>
+    <developerConnection>scm:git:git@github.com:delightful-business-documents/parent-for-libraries.git</developerConnection>
   </scm>
 
   <dependencyManagement>
