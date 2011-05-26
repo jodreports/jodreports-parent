@@ -29,8 +29,8 @@
   </distributionManagement>
 
   <scm>
-    <connection>scm:git:git@github.com:delightful-business-documents/parent-for-libraries.git</connection>
-    <developerConnection>scm:git:git@github.com:delightful-business-documents/parent-for-libraries.git</developerConnection>
+    <connection>scm:git:git@github.com:delightful-business-documents/library-parent.git</connection>
+    <developerConnection>scm:git:git@github.com:delightful-business-documents/library-parent.git</developerConnection>
   </scm>
 
   <dependencyManagement>
