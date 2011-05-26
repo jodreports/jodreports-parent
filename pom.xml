@@ -69,8 +69,10 @@
           <executions>
             <execution>
               <id>attach-sources-jar</id>
-              <phase>verify</phase>
-              <goals><goal>jar-no-fork</goal></goals>
+              <phase>package</phase>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
             </execution>
           </executions>
         </plugin>
@@ -80,8 +82,10 @@
           <executions>
             <execution>
               <id>attach-javadoc-jar</id>
-              <phase>verify</phase>
-              <goals><goal>jar</goal></goals>
+              <phase>package</phase>
+              <goals>
+                <goal>jar</goal>
+              </goals>
               <configuration>
                 <encoding>UTF-8</encoding>
               </configuration>
