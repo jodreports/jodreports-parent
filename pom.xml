@@ -2,7 +2,6 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>de.lightful.businessdocs</groupId>
-  <!--<groupId>net.sf.jodreports</groupId>-->
   <artifactId>parent-for-libraries</artifactId>
   <version>0.5.3-SNAPSHOT</version>
   <packaging>pom</packaging>
