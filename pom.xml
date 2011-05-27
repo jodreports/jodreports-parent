@@ -3,7 +3,7 @@
 
   <groupId>de.lightful.businessdocs</groupId>
   <artifactId>library-parent</artifactId>
-  <version>0.5.4-SNAPSHOT</version>
+  <version>0.5.4</version>
   <packaging>pom</packaging>
   <name>Business Docs :: Library Parent</name>
 
