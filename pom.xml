@@ -1,11 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>de.lightful.businessdocs</groupId>
+  <groupId>org.jodreports</groupId>
   <artifactId>library-parent</artifactId>
-  <version>0.5.5-SNAPSHOT</version>
+  <version>2.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Business Docs :: Library Parent</name>
+  <name>JODReports :: Library Parent</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,9 +28,19 @@
     </snapshotRepository>
   </distributionManagement>
 
+  <url>http://jodreports.org/</url>
+
+  <licenses>
+    <license>
+      <name>GNU Lesser General Public License, Version 2.1</name>
+      <url>http://www.gnu.org/licenses/lgpl.html</url>
+    </license>
+  </licenses>
+
   <scm>
-    <connection>scm:git:git@github.com:delightful-business-documents/library-parent.git</connection>
-    <developerConnection>scm:git:git@github.com:delightful-business-documents/library-parent.git</developerConnection>
+    <url>https://github.com/jodreports</url>
+    <connection>scm:git:git@github.com:jodreports/library-parent.git</connection>
+    <developerConnection>scm:git:git@github.com:jodreports/library-parent.git</developerConnection>
   </scm>
 
   <dependencyManagement>
