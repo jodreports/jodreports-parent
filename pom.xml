@@ -30,6 +30,8 @@
 
   <url>http://jodreports.org/</url>
 
+  <description>JODReports Parent POM for all JODReports moduls.</description>
+
   <licenses>
     <license>
       <name>GNU Lesser General Public License, Version 2.1</name>
