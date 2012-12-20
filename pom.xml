@@ -2,15 +2,88 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.jodreports</groupId>
+  <parent>
+    <groupId>de.lightful.poms</groupId>
+    <artifactId>standard-oss-build</artifactId>
+    <version>2</version>
+  </parent>
+
+  <groupId>org.jodreports.poms</groupId>
   <artifactId>jodreports-parent</artifactId>
-  <version>3.0.0-SNAPSHOT</version>
+  <version>1-SNAPSHOT</version>
   <packaging>pom</packaging>
+
   <name>JODReports :: Parent POM</name>
+  <description>Maven Parent POM for all JODReports modules.</description>
+
+  <url>http://www.jodreports.org/</url>
+
+  <licenses>
+    <license>
+      <name>GNU Lesser General Public License, Version 3</name>
+      <url>http://www.gnu.org/licenses/lgpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-jdk14</artifactId>
+        <version>1.6.1</version>
+      </dependency>
+      <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>6.3.1</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.8.2</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>enforce-sane-build</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <phase>validate</phase>
+              <configuration>
+                <rules>
+                  <requireMavenVersion>
+                    <version>3.0.4</version>
+                  </requireMavenVersion>
+                  <requireJavaVersion>
+                    <version>1.6</version>
+                  </requireJavaVersion>
+                </rules>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 
   <distributionManagement>
     <downloadUrl>http://lightful.de/mvnrepo/public/releases</downloadUrl>
@@ -28,156 +101,10 @@
     </snapshotRepository>
   </distributionManagement>
 
-  <url>http://jodreports.org/</url>
-
-  <description>JODReports Parent POM for all JODReports moduls.</description>
-
-  <licenses>
-    <license>
-      <name>GNU Lesser General Public License, Version 2.1</name>
-      <url>http://www.gnu.org/licenses/lgpl.html</url>
-    </license>
-  </licenses>
-
   <scm>
     <url>https://github.com/jodreports</url>
     <connection>scm:git:git@github.com:jodreports/jodreports-parent.git</connection>
     <developerConnection>scm:git:git@github.com:jodreports/jodreports-parent.git</developerConnection>
   </scm>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-jdk14</artifactId>
-        <version>1.6.1</version>
-      </dependency>
-      <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>6.0.1</version>
-      </dependency>
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>3.8.2</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3.2</version>
-          <configuration>
-            <source>1.6</source>
-            <target>1.6</target>
-          </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>2.5</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.7.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-source-plugin</artifactId>
-          <version>2.1.2</version>
-          <executions>
-            <execution>
-              <id>attach-sources-jar</id>
-              <phase>package</phase>
-              <goals>
-                <goal>jar-no-fork</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.7</version>
-          <executions>
-            <execution>
-              <id>attach-javadoc-jar</id>
-              <phase>package</phase>
-              <goals>
-                <goal>jar</goal>
-              </goals>
-              <configuration>
-                <encoding>UTF-8</encoding>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>2.1</version>
-          <configuration>
-            <scmCommentPrefix xml:space="preserve">[DBD:RELEASE]_</scmCommentPrefix>
-            <goals>deploy</goals>
-            <pushChanges>true</pushChanges>
-          </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.5</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-enforcer-plugin</artifactId>
-          <version>1.0</version>
-          <executions>
-            <execution>
-              <id>enforce-sane-build</id>
-              <goals>
-                <goal>enforce</goal>
-              </goals>
-              <phase>validate</phase>
-              <configuration>
-                <rules>
-                  <requireMavenVersion>
-                    <version>3.0.3</version>
-                  </requireMavenVersion>
-                  <requireJavaVersion>
-                    <version>1.6.0</version>
-                  </requireJavaVersion>
-                </rules>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-ssh</artifactId>
-        <version>1.0-beta-7</version>
-      </extension>
-    </extensions>
-
-    <plugins>
-      <plugin>
-        <artifactId>maven-enforcer-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <artifactId>maven-javadoc-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <artifactId>maven-source-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-      </plugin>
-    </plugins>
-
-  </build>
 
 </project>
