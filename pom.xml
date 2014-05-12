@@ -9,7 +9,7 @@
   </parent>
 
   <groupId>org.jodreports.poms</groupId>
-  <artifactId>jodreports-parent-hypoport</artifactId>
+  <artifactId>jodreports-parent</artifactId>
   <version>1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
@@ -84,20 +84,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <distributionManagement>
-    <downloadUrl>http://lightful.de/mvnrepo/public/releases</downloadUrl>
-    <repository>
-      <id>hypoport-shared-snapshot</id>
-      <url>http://nexus-beta.hypoport.local/nexus/content/repositories/hypoport-shared-releases/</url>
-      <layout>default</layout>
-    </repository>
-    <snapshotRepository>
-      <id>hypoport-shared-releases</id>
-      <url>http://nexus-beta.hypoport.local/nexus/content/repositories/hypoport-shared-snapshots/</url>
-      <layout>default</layout>
-    </snapshotRepository>
-  </distributionManagement>
 
   <scm>
     <url>https://github.com/jodreports</url>
