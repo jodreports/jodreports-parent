@@ -9,7 +9,7 @@
 
   <groupId>org.jodreports.poms</groupId>
   <artifactId>jodreports-parent</artifactId>
-  <version>1</version>
+  <version>2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>JODReports :: Parent POM</name>
